@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server movies-library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Judeva/Movie-library.git"
+  },
+  "keywords": [
+    "movies"
+  ],
+  "author": "Joanna Doudeva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Judeva/Movie-library/issues"
+  },
+  "homepage": "https://github.com/Judeva/Movie-library#readme"
+}

@@ -1,0 +1,29 @@
+.hero-section{
+    background-image:url('https://st2.depositphotos.com/16195632/45100/v/450/depositphotos_451006234-stock-illustration-cinema-background-realistic-film-strip.jpg');
+    background-repeat:no-repeat;
+    background-position: right;
+    background-size: cover;
+    padding: 60px;
+}
+
+#hero-section-btn{
+    padding: 10px;
+    border-radius: 7px;
+    width: 80px;
+    background-color: rgb(10, 91, 197);
+    color: white;
+    border-width: 0;
+    cursor:pointer;
+}
+
+#hero-section-btn :hover{
+    opacity:0.5;
+}
+
+#hero-section-p{
+    width: 400px;
+    color:rgba(255, 255, 255, 0.514);
+}
+h2{
+    color:white;
+}

@@ -13,7 +13,7 @@
     text-align: left;
     outline:none;
     font-size: medium;
-    
+    padding-left: 10px;;
 }
 
 #search-btn{
@@ -29,4 +29,9 @@
     margin: 10px;
     text-align: center;
     font-size: medium;
+    cursor:pointer;
+}
+
+#search-btn:hover{
+    opacity: 0.5;
 }

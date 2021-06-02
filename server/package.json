@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Judeva/Movie-library/issues"
   },
-  "homepage": "https://github.com/Judeva/Movie-library#readme"
+  "homepage": "https://github.com/Judeva/Movie-library#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

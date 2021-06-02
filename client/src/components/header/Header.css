@@ -1,0 +1,12 @@
+.toolbar{
+    background-color: rgba(235, 235, 235, 0.822);
+    height: 70px;
+    padding: 5px;
+}
+
+.title{
+    float:left;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: large;
+}

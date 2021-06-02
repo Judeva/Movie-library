@@ -1,0 +1,32 @@
+.search-div{
+    float:right;
+}
+
+#search-input{
+    border-radius: 7px;
+    height: 40px;
+    width: 280px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(65, 65, 65);
+    border: solid 1px;
+    border-color: rgba(85, 85, 85, 0.493);
+    text-align: left;
+    outline:none;
+    font-size: medium;
+    
+}
+
+#search-btn{
+    border-radius: 7px;
+    height: 40px;
+    width:70px;
+    background-color: rgb(255, 255, 255);
+    color: green;
+    border: solid 1px;
+    border-color: green;
+    text-align: left;
+    outline:none;
+    margin: 10px;
+    text-align: center;
+    font-size: medium;
+}

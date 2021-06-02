@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+
+#search-input{
+  border-radius: 5px;
+  height: 30px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(65, 65, 65);
+  border: solid 1px;
+  border-color: rgba(85, 85, 85, 0.493);
+  text-align: left;
+  outline:none
+}
+
+#search-btn{
+  border-radius: 5px;
+  height: 30px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(7, 107, 32);
+  border: solid 1px;
+  border-color: rgb(7, 107, 32);
+  text-align: left;
+  outline:none
+}

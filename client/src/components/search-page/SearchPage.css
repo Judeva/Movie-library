@@ -1,0 +1,21 @@
+.searchPage-section {
+    width:100%;
+    position: relative;
+}
+
+  
+#searchPage-title{
+    color:black;
+    text-align: center;
+    margin-bottom: 5%;
+
+}
+
+.searchPage-section .search-div{
+    margin: auto;
+    position: absolute;
+    top: 10%; 
+    left: 40%; 
+    bottom: 0; 
+    right: 0;
+}

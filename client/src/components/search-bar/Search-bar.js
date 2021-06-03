@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
 // import CollectionContext from '../../contexts/CollectionContext';
-import './Search.css';
+import './Search-bar.css';
 
-const Search = () => {
+const SearchBar = () => {
 
     const [searchInput, setSearchInput] = useState("");
     // const { images, search } = useContext(CollectionContext);
@@ -40,4 +40,4 @@ const Search = () => {
     );
 }
 
-export default Search;
+export default SearchBar;

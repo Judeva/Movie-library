@@ -1,0 +1,42 @@
+.movie-section{
+    width: 100%;
+    margin: 10%;
+    margin-bottom: 5%;
+    margin-top: 6%;
+    position: relative;
+}
+
+.movie-section-img{
+    margin-right: 2%;
+    float: left;
+    position: relative;
+}
+
+.movie-section-title{
+    color:black;
+}
+
+.movie-section-summary{
+    width: 80%;
+}
+
+.movie-section-link{
+    display: block;
+}
+
+.movie-section-btn{
+    border-radius: 7px;
+    height: 40px;
+    width:max-content;
+    background-color: rgb(255, 255, 255);
+    color: rgb(189, 0, 0);
+    border: solid 1px;
+    border-color: rgba(189, 0, 0, 0.658);
+    text-align: left;
+    outline:none;
+    margin: 15px;
+    text-align: center;
+    font-size: medium;
+    cursor:pointer;
+    display: block;
+}

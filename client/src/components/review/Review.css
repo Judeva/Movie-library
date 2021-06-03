@@ -1,0 +1,19 @@
+.review-section{
+    width: 100%;
+    margin-left: 10%;
+}
+
+.review-title{
+    color:black;
+}
+
+.review-textarea{
+    border-radius: 7px;
+    border-color: rgba(0, 0, 0, 0.445);
+    width: 600px;
+    height: 160px;
+    float:left;
+    font-size: large;
+    padding-top: 15px;
+    padding-left: 15px;
+}

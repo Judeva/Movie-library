@@ -1,0 +1,11 @@
+.star{
+    font-size: x-large;
+    cursor:pointer;
+    margin-right: 5px;
+    margin-bottom: 10px;;
+}
+
+#radio{
+    display:none;
+}
+

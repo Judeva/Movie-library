@@ -14,6 +14,7 @@
     color: white;
     border-width: 0;
     cursor:pointer;
+    text-decoration: none;
 }
 
 #hero-section-btn :hover{

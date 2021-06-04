@@ -1,16 +1,25 @@
 .toolbar{
     background-color: rgba(235, 235, 235, 0.822);
     height: 70px;
-    padding: 5px;
-}
-
-.title{
-    float:left;
-    margin-left: 10px;
-    font-weight: 500;
-    font-size: large;
+    padding:10px;
+    width:100%;
+    display: table;
 }
 
 .search-div{
-    float: right;
+    display:table-cell;
+    vertical-align: middle;
+    float:right;
+    padding-right: 20px;
+}
+
+.nav-link {
+    color: rgba(0, 0, 0, 0.76);
+    font-weight:bold;
+    font-size: large;
+    text-decoration: none;
+    margin-left: 10px;
+    display:table-cell;
+    vertical-align: middle;
+    padding-left: 20px;
 }

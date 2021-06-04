@@ -1,0 +1,43 @@
+.register {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    align-content: center;
+}
+
+.register label{
+    text-align: left;
+    display: block;
+    color: rgb(0, 0, 0);
+}
+
+.register h2 {
+    
+    color: rgb(0, 0, 0);
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.register input{
+    width: 100%;
+    padding: 6px 10px;
+    margin: 10px 0;
+    border: 1px solid rgb(0, 104, 0);
+    box-sizing: border-box;
+    display: block;
+    border-radius: 5px;
+}
+#register-submit-button{
+    border-radius: 7px;
+    height: 40px;
+    width:70px;
+    background-color: rgb(255, 255, 255);
+    color: green;
+    border: solid 1px;
+    border-color: green;
+    text-align: left;
+    outline:none;
+    text-align: center;
+    font-size: medium;
+    cursor:pointer;
+}

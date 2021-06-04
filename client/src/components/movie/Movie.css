@@ -24,7 +24,7 @@
     display: block;
 }
 
-.movie-section-btn{
+.movie-section-btn-remove{
     border-radius: 7px;
     height: 40px;
     width:max-content;
@@ -32,6 +32,23 @@
     color: rgb(189, 0, 0);
     border: solid 1px;
     border-color: rgba(189, 0, 0, 0.658);
+    text-align: left;
+    outline:none;
+    margin: 15px;
+    text-align: center;
+    font-size: medium;
+    cursor:pointer;
+    display: block;
+}
+
+.movie-section-btn-add{
+    border-radius: 7px;
+    height: 40px;
+    width:max-content;
+    background-color: rgb(255, 255, 255);
+    color: green;
+    border: solid 1px;
+    border-color: green;
     text-align: left;
     outline:none;
     margin: 15px;

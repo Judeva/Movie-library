@@ -16,7 +16,6 @@ const Movie = ({
 
     const { isAuthenticated } = useContext(AuthContext);
 
-
     return (
 
         <div className='movie-section'>
@@ -25,8 +24,17 @@ const Movie = ({
             <p className='movie-section-genres'>{genres.join(', ')} | {runtime} minutes</p>
             <div className='movie-section-summary' dangerouslySetInnerHTML={{ __html: summary }} />
             <a href={officialSite} className="movie-section-link" target='blank'>Visit official site</a>
-            {isAuthenticated && <input type="submit" className="movie-section-btn-remove" value="Remove From Favorites" />}
-            {isAuthenticated && <input type="submit" className="movie-section-btn-add" value="Add to Favorites" />}
+
+           {isAuthenticated && <div>
+                <input
+                    type="submit"
+                    className="movie-section-btn-remove"
+                    value="Remove From Favorites" />
+                <input
+                    type="submit"
+                    className="movie-section-btn-add"
+                    value="Add to Favorites" />
+            </div>}
         </div>
     );
 }

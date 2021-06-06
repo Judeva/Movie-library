@@ -1,13 +1,14 @@
 import Movie from "../movie/Movie";
 import Review from "../review/Review";
 import * as movieSevice from "../../services/movieService";
-import { useEffect, useState } from "react";
+import AuthContext from "../../contexts/authContext";
+import { useEffect, useState, useContext } from "react";
 
 
 const Details = ({ match }) => {
 
     let [movie, setMovie] = useState();
-    // const user = useContext(AuthContext);
+    const {user, isAuthenticated} = useContext(AuthContext);
 
     useEffect(() => {
         movieSevice.getOne(match.params._id)
@@ -23,15 +24,15 @@ const Details = ({ match }) => {
     return (
         <div className="details-section">
             {console.log(movie)}
-            {movie &&<Movie 
-            image={movie.image}
-            id={movie.id}
-            name={movie.name}
-            premiered ={movie.premiered}
-            genres={movie.genres}
-            summary={movie.summary}
-            officialSite={movie.officialSite} />}
-            <Review/>
+            {movie && <Movie
+                image={movie.image}
+                id={movie.id}
+                name={movie.name}
+                premiered={movie.premiered}
+                genres={movie.genres}
+                summary={movie.summary}
+                officialSite={movie.officialSite} />}
+            {isAuthenticated && <Review />}
         </div>
     );
 }

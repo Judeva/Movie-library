@@ -7,7 +7,6 @@ const Header = () => {
 
     return (
         <div className="toolbar">
-
             <NavLink to="/" className="nav-link">My Movie collection</NavLink>
             <NavLink to="/register" className="nav-link">REGISTER</NavLink>
             <NavLink to="/login" className="nav-link">LOGIN</NavLink>

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const SALT_ROUNDS = 10;
+const SALT_ROUNDS = 11;
 const bcrypt = require('bcrypt');
 
 
@@ -14,10 +14,9 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 6,
     },
-    favorites: [{
-        type: mongoose.Types.ObjectId,
-        ref: 'Movie'
-    }],
+    favorites: [],
+    notes:[],
+    ratings:[]
 
 });
 

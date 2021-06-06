@@ -1,4 +1,3 @@
-import {toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 
 export const getAll = () => {
@@ -7,10 +6,17 @@ export const getAll = () => {
         .catch(err => console.log('Handled error:' + err));
 };
 
-export const getOne = (movieId) => {
-    return fetch(`${'http://api.tvmaze.com/shows'}/${movieId}`)
-        .then(res =>res.json())
-        .catch(error => console.log(error));
+export const getSearched = (searchInput) => {
+    return fetch(`http://api.tvmaze.com/search/shows?q=${searchInput}`)
+        .then(res => res.json())
+        .catch(err => console.log('Handled error:' + err));
+};
+
+export const getOne = (id) => {
+    console.log(id);
+    return fetch('http://api.tvmaze.com/shows/' + id)
+        .then(res => res.json())
+        .catch(err => console.log('Handled error:' + err));
 };
 
 // export const like = (nominationId, currentlikes) => {

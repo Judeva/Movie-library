@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { auth } from '../../firebase/firebase'
-import { ToastContainer, toast } from "react-toastify";
-// import { validateAuthInput } from "../../services/authService";
+import { auth } from '../../firebase/firebase';
+import { toast, ToastContainer } from "react-toastify";
+import axios from 'axios';
+import 'react-toastify/dist/ReactToastify.css';
 import './Register.css';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -13,6 +14,7 @@ const Register = ({
     const [password, setPassword] = useState('');
     const [rePassword, setRePassword] = useState('');
 
+
     const onRegisterSubmitHandler = (e) => {
 
         e.preventDefault();
@@ -20,16 +22,34 @@ const Register = ({
         if (password !== rePassword) {
             return toast.error('Passwords should match!')
         }
-        
-    //  validateAuthInput(username, password);
+        const newUser = {
+            username,
+            password,
+            favorites: [],
+            notes: [],
+            ratings: []
+        }
+        //  validateAuthInput(username, password);
 
+        console.log(newUser);
+
+        //Create user in mongoDB
+        axios.post('http://localhost:5000/users', newUser)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                toast.error(err.message);
+            });
+
+        // Create user in firebase and auto login.
         auth.createUserWithEmailAndPassword(username, password)
             .then(userCredentials => {
                 history.push('/');
             }).catch(err => {
                 toast.error(err.message)
                 console.log(err);
-            })
+            });
     }
 
     return (

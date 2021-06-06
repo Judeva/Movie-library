@@ -8,9 +8,8 @@
 
 .search-div{
     display:table-cell;
-    vertical-align: middle;
-    float:right;
     padding-right: 20px;
+    float:right;
 }
 
 .nav-link {

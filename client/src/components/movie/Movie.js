@@ -16,8 +16,13 @@ const Movie = ({
 
     const { userData, isAuthenticated } = useContext(AuthContext);
 
-    console.log(userData.favorites)
-    
+    const addToFavoritesHandler = () => {
+        userData.favorites.push(id);
+    }
+    const removeFromFavoritesHandler = () => {
+
+    }
+
     return (
 
         <div className='movie-section'>
@@ -27,17 +32,16 @@ const Movie = ({
             <div className='movie-section-summary' dangerouslySetInnerHTML={{ __html: summary }} />
             <a href={officialSite} className="movie-section-link" target='blank'>Visit official site</a>
 
-           {isAuthenticated && <div>
-                <input
-                    type="submit"
+            {isAuthenticated && <div>
+                <button
                     className="movie-section-btn-remove"
-                    value="Remove From Favorites"
-                     />
-                <input
-                    type="submit"
+                    onClick={removeFromFavoritesHandler}>
+                    Remove From Favorites</button>
+
+                <button
                     className="movie-section-btn-add"
-                    value="Add to Favorites"
-                     />
+                    onClick={addToFavoritesHandler}>
+                    Add to Favorites </button >
             </div>}
         </div>
     );

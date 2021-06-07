@@ -1,7 +1,12 @@
 import './Hero.css'
 import { Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from "react";
+import AuthContext from '../../contexts/authContext';
+import CollectionContext from '../../contexts/collectionContext';
 
 const Hero = () => {
+
+
     return (
         <div className="hero-section">
             <h2 id="hero-title">Movies</h2>

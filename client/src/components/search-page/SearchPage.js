@@ -8,22 +8,12 @@ import { useContext, useEffect } from "react";
 const SearchPage = () => {
 
     const { movies, setMovies } = useContext(CollectionContext);
- 
-    useEffect(() => {
-        movieService.getAll()
-          .then(res => {
-        
-            setMovies(res);
-          }).catch(err => {
-            console.log(err);
-          })
-      }, [])
-    
+
     return (
         <div className="searchPage-section" >
             <h2 id='searchPage-title'>Search</h2>
             <div className="searchBar-container">
-            <SearchBar/>
+                <SearchBar />
             </div>
             <ul className='searchPage-ul'>
                 {movies && movies.map(x => (

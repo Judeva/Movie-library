@@ -2,7 +2,8 @@ import '@fontsource/roboto';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { auth } from './firebase/firebase';
-import * as authService from './services/authService'
+import * as authService from './services/authService';
+import * as movieService from './services/movieService';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
 import Register from './components/register/Register';
@@ -18,11 +19,21 @@ function App() {
   const [loggedUser, setLoggedUser] = useState(null);
   const [userData, setUserData] = useState(null);
   const [movies, setMovies] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     auth.onAuthStateChanged(setLoggedUser);
+
     authService.getOneUser(loggedUser?.email)
       .then(res => setUserData(res));
+
+    movieService.getAll()
+      .then(res => {
+        setMovies(res);
+      }).catch(err => {
+        console.log(err);
+      });
+
   }, [loggedUser]);
 
   const authInfo = {
@@ -34,7 +45,7 @@ function App() {
   return (
     <div>
       <AuthContext.Provider value={authInfo}>
-        <CollectionContext.Provider value={{ movies: movies, setMovies: setMovies }}>
+        <CollectionContext.Provider value={{ movies: movies, setMovies: setMovies, favorites: favorites, setFavorites:setFavorites }}>
           <Header />
           <Switch>
             <Route path='/' exact component={Home} />

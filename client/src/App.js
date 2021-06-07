@@ -2,6 +2,7 @@ import '@fontsource/roboto';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { auth } from './firebase/firebase';
+import * as authService from './services/authService'
 import Header from './components/header/Header';
 import Home from './components/home/Home';
 import Register from './components/register/Register';
@@ -15,28 +16,30 @@ import './App.css';
 function App() {
 
   const [loggedUser, setLoggedUser] = useState(null);
+  const [userData, setUserData] = useState(null);
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    auth.onAuthStateChanged(setLoggedUser)
-  }, []);
-
+    auth.onAuthStateChanged(setLoggedUser);
+    authService.getOneUser(loggedUser?.email)
+      .then(res => setUserData(res));
+  }, [loggedUser]);
 
   const authInfo = {
     isAuthenticated: Boolean(loggedUser),
-    user: loggedUser?.email
+    user: loggedUser?.email,
+    userData
   };
- 
+
   return (
-  
     <div>
       <AuthContext.Provider value={authInfo}>
-        <CollectionContext.Provider value={{movies: movies, setMovies: setMovies}}>
+        <CollectionContext.Provider value={{ movies: movies, setMovies: setMovies }}>
           <Header />
           <Switch>
             <Route path='/' exact component={Home} />
             <Route path='/search' component={SearchPage} />
-            <Route path='/movies/:_id' exact component={Details}/>
+            <Route path='/movies/:_id' exact component={Details} />
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
             <Route path='/logout'

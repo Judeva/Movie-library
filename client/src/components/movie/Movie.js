@@ -14,8 +14,10 @@ const Movie = ({
     summary
 }) => {
 
-    const { isAuthenticated } = useContext(AuthContext);
+    const { userData, isAuthenticated } = useContext(AuthContext);
 
+    console.log(userData.favorites)
+    
     return (
 
         <div className='movie-section'>
@@ -29,11 +31,13 @@ const Movie = ({
                 <input
                     type="submit"
                     className="movie-section-btn-remove"
-                    value="Remove From Favorites" />
+                    value="Remove From Favorites"
+                     />
                 <input
                     type="submit"
                     className="movie-section-btn-add"
-                    value="Add to Favorites" />
+                    value="Add to Favorites"
+                     />
             </div>}
         </div>
     );

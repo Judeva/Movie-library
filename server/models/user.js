@@ -15,8 +15,8 @@ const userSchema = new mongoose.Schema({
         minlength: 6,
     },
     favorites: [],
-    notes:[],
-    ratings:[]
+    notes: [],
+    ratings: []
 
 });
 

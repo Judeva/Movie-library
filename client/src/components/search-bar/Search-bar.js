@@ -10,7 +10,6 @@ const SearchBar = () => {
 
   const { movies, setMovies } = useContext(CollectionContext);
 
-
   const onSearchClickHandler = (searchInput) => {
 
     if (searchInput !== '') {

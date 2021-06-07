@@ -2,9 +2,12 @@ var express = require('express');
 const User = require('../models/User');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-    res.send('respond with a resource');
+router.get('/:username', function (req, res, next) {
+    User.findOne({username: req.params.username})
+        .then(data => {
+            res.send(data)
+        })
+        .catch(err => console.log(err));
 });
 
 router.post('/', (req, res) => {
@@ -24,7 +27,7 @@ router.post('/', (req, res) => {
         .then(createdUser => {
             console.log('User created succesfully!')
         })
-        .catch(err=>{
+        .catch(err => {
             console.log(err);
         })
 

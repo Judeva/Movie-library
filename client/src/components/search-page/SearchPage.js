@@ -3,7 +3,7 @@ import SearchBar from "../search-bar/Search-bar";
 import CollectionContext from '../../contexts/collectionContext';
 import * as movieService from '../../services/movieService';
 import './SearchPage.css';
-import { useContext,useEffect } from "react";
+import { useContext, useEffect } from "react";
 
 const SearchPage = () => {
 
@@ -12,11 +12,12 @@ const SearchPage = () => {
     useEffect(() => {
         movieService.getAll()
           .then(res => {
+        
             setMovies(res);
           }).catch(err => {
             console.log(err);
           })
-      })
+      }, [])
     
     return (
         <div className="searchPage-section" >

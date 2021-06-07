@@ -32,6 +32,15 @@ const Register = ({
         //  validateAuthInput(username, password);
 
         console.log(newUser);
+        // Create user in firebase and auto login.
+        auth.createUserWithEmailAndPassword(username, password)
+            .then(userCredentials => {
+                history.push('/')
+            })
+            .catch(err => {
+                toast.error(err.message)
+                console.log(err);
+            });
 
         //Create user in mongoDB
         axios.post('http://localhost:5000/users', newUser)
@@ -41,15 +50,8 @@ const Register = ({
             .catch(err => {
                 toast.error(err.message);
             });
+        history.push('/');
 
-        // Create user in firebase and auto login.
-        auth.createUserWithEmailAndPassword(username, password)
-            .then(userCredentials => {
-                history.push('/');
-            }).catch(err => {
-                toast.error(err.message)
-                console.log(err);
-            });
     }
 
     return (

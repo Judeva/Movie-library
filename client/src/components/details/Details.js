@@ -13,7 +13,6 @@ const Details = ({ match }) => {
     useEffect(() => {
         movieSevice.getOne(match.params._id)
             .then(res => {
-                console.log(res);
                 setMovie(res)
             })
             .catch(err => {

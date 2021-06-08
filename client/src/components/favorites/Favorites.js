@@ -11,15 +11,7 @@ const Favorites = () => {
     const { userData, isAuthenticated } = useContext(AuthContext);
 
     useEffect(() => {
-        const favoriteMovies = [];
-        movies.map(movie => {
-            userData?.favorites.map(favId => {
-                if (movie.id == favId) {
-                    favoriteMovies.push(movie)
-                }
-            })
-        })
-        setFavorites(favoriteMovies)
+        
     }, [userData]);
 
     console.log(favorites);

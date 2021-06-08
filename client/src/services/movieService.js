@@ -19,6 +19,14 @@ export const getOne = (id) => {
         .catch(err => console.log('Handled error:' + err));
 };
 
+
+export const addToFavorites =()=>{
+
+}
+
+export const removeFromFavorites =()=>{
+
+}
 // export const like = (nominationId, currentlikes) => {
 //     return fetch(`${api.nominations}/${nominationId}`, {
 //         method: 'PATCH',

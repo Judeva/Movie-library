@@ -19,7 +19,7 @@ function App() {
   const [loggedUser, setLoggedUser] = useState(null);
   const [userData, setUserData] = useState(null);
   const [movies, setMovies] = useState([]);
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState();
 
   useEffect(() => {
     auth.onAuthStateChanged(setLoggedUser);
@@ -33,7 +33,7 @@ function App() {
       }).catch(err => {
         console.log(err);
       });
-
+      
   }, [loggedUser]);
 
   const authInfo = {
@@ -45,7 +45,8 @@ function App() {
   return (
     <div>
       <AuthContext.Provider value={authInfo}>
-        <CollectionContext.Provider value={{ movies: movies, setMovies: setMovies, favorites: favorites, setFavorites:setFavorites }}>
+        {console.log('App -> ' + favorites)}
+        <CollectionContext.Provider value={{ movies: movies, setMovies: setMovies, favorites: favorites, setFavorites: setFavorites }}>
           <Header />
           <Switch>
             <Route path='/' exact component={Home} />

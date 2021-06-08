@@ -1,6 +1,8 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../contexts/authContext";
+import CollectionContext from "../../contexts/collectionContext";
+import FavoriteContext from "../../contexts/favoriteContext";
 import "./Movie.css";
 
 const Movie = ({
@@ -11,16 +13,26 @@ const Movie = ({
     premiered,
     officialSite,
     image,
-    summary
+    summary,
 }) => {
 
     const { userData, isAuthenticated } = useContext(AuthContext);
+    const [isFavorite, setIsFavorite] = useState();
+
+    useEffect(() => {
+
+    }, [])
 
     const addToFavoritesHandler = () => {
         userData.favorites.push(id);
+        setIsFavorite(true)
+        console.log(userData.favorites);
     }
     const removeFromFavoritesHandler = () => {
-
+        let index = userData.favorites.indexOf(id);
+        userData.favorites.splice(index, 1);
+        console.log(userData.favorites);
+        setIsFavorite(false)
     }
 
     return (
@@ -33,15 +45,15 @@ const Movie = ({
             <a href={officialSite} className="movie-section-link" target='blank'>Visit official site</a>
 
             {isAuthenticated && <div>
-                <button
+                {isFavorite && <button
                     className="movie-section-btn-remove"
                     onClick={removeFromFavoritesHandler}>
-                    Remove From Favorites</button>
+                    Remove From Favorites</button>}
 
-                <button
+                {!isFavorite && <button
                     className="movie-section-btn-add"
                     onClick={addToFavoritesHandler}>
-                    Add to Favorites </button >
+                    Add to Favorites </button >}
             </div>}
         </div>
     );

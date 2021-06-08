@@ -3,7 +3,7 @@ const User = require('../models/User');
 var router = express.Router();
 
 router.get('/:username', function (req, res, next) {
-    User.findOne({username: req.params.username})
+    User.findOne({ username: req.params.username })
         .then(data => {
             res.send(data)
         })
@@ -32,4 +32,15 @@ router.post('/', (req, res) => {
         })
 
 });
+
+
+router.patch('/:username', function (req, res, next) {
+    console.log(req.body)
+    User.findOneAndUpdate( { username: req.params.username }, req.body)
+        .then(data => {
+            res.send(data)
+        })
+        .catch(err => console.log(err));
+});
+
 module.exports = router;

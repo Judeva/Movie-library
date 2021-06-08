@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../contexts/authContext";
-import CollectionContext from "../../contexts/collectionContext";
-import FavoriteContext from "../../contexts/favoriteContext";
+import * as movieService from '../../services/movieService';
 import "./Movie.css";
 
 const Movie = ({
@@ -25,14 +24,18 @@ const Movie = ({
 
     const addToFavoritesHandler = () => {
         userData.favorites.push(id);
-        setIsFavorite(true)
+        setIsFavorite(true);
+
+
+        movieService.addToFavorites(userData.username, userData);
+
         console.log(userData.favorites);
     }
     const removeFromFavoritesHandler = () => {
         let index = userData.favorites.indexOf(id);
         userData.favorites.splice(index, 1);
         console.log(userData.favorites);
-        setIsFavorite(false)
+        setIsFavorite(false);
     }
 
     return (

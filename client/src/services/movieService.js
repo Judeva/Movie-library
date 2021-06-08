@@ -20,11 +20,19 @@ export const getOne = (id) => {
 };
 
 
-export const addToFavorites =()=>{
-
+export const addToFavorites = (username, userData) => {
+    return fetch(`http://localhost:5000/users/${username}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData)
+    })
+        .then(res => res.json())
+        .catch(err => console.log(err));
 }
 
-export const removeFromFavorites =()=>{
+export const removeFromFavorites = () => {
 
 }
 // export const like = (nominationId, currentlikes) => {

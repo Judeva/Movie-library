@@ -33,7 +33,7 @@ function App() {
       }).catch(err => {
         console.log(err);
       });
-      
+
   }, [loggedUser]);
 
   const authInfo = {
@@ -45,7 +45,6 @@ function App() {
   return (
     <div>
       <AuthContext.Provider value={authInfo}>
-        {console.log('App -> ' + favorites)}
         <CollectionContext.Provider value={{ movies: movies, setMovies: setMovies, favorites: favorites, setFavorites: setFavorites }}>
           <Header />
           <Switch>

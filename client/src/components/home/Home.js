@@ -14,7 +14,6 @@ const Home = () => {
         const favoriteMovies = [];
         movies.map(movie => {
             userData?.favorites?.map(favId => {
-                console.log(userData.favorites)
                 if (movie.id == favId) {
                     favoriteMovies.push(movie)
                 }

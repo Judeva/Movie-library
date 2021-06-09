@@ -1,5 +1,5 @@
 import './Favorites.css';
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect} from "react";
 import AuthContext from '../../contexts/authContext';
 import CollectionContext from '../../contexts/collectionContext';
 import { Link } from "react-router-dom";
@@ -7,14 +7,13 @@ import { Link } from "react-router-dom";
 
 const Favorites = () => {
 
-    const { movies, setMovies, favorites, setFavorites } = useContext(CollectionContext);
-    const { userData, isAuthenticated } = useContext(AuthContext);
+    const {favorites } = useContext(CollectionContext);
+    const { userData} = useContext(AuthContext);
 
     useEffect(() => {
         
     }, [userData]);
 
-    console.log(favorites);
     return (
         <div className='favorites-section'>
             <h2 id='favorites-title'>Your Favorites</h2>

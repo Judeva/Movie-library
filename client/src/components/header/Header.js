@@ -1,4 +1,3 @@
-
 import SearchBar from "../search-bar/Search-bar";
 import { NavLink } from 'react-router-dom';
 import AuthContext from "../../contexts/authContext";
@@ -7,7 +6,7 @@ import { useContext } from "react";
 
 const Header = () => {
 
-    const { user, isAuthenticated } = useContext(AuthContext);
+    const { isAuthenticated } = useContext(AuthContext);
     return (
         <div className="toolbar">
             <NavLink to="/" className="nav-link">My Movie collection</NavLink>

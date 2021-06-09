@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
 
 
 router.patch('/:username', function (req, res, next) {
-    console.log(req.body)
+
     User.findOneAndUpdate( { username: req.params.username }, req.body)
         .then(data => {
             res.send(data)

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import AuthContext from '../../contexts/authContext';
 import CollectionContext from '../../contexts/collectionContext';
 import Favorites from '../favorites/Favorites';
@@ -14,7 +14,7 @@ const Home = () => {
         const favoriteMovies = [];
         movies.map(movie => {
             userData?.favorites?.map(favId => {
-                if (movie.id == favId) {
+                if (movie.id === favId) {
                     favoriteMovies.push(movie)
                 }
             })

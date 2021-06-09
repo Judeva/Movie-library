@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../contexts/authContext";
-import CollectionContext from "../../contexts/collectionContext";
 import * as movieService from '../../services/movieService';
 import "./Movie.css";
 
@@ -18,7 +17,6 @@ const Movie = ({
 }) => {
 
     const { userData, isAuthenticated } = useContext(AuthContext);
-    const { movies } = useContext(CollectionContext);
     const [isFavorite, setIsFavorite] = useState();
 
     useEffect(() => {
@@ -49,7 +47,6 @@ const Movie = ({
     return (
 
         <div className='movie-section'>
-{console.log('i rendering' + isFavorite)}
             <Link to={`/movies/${id}`} className='movie-link'><img className='movie-section-img' src={image.medium} alt="poster" /></Link>
             <Link to={`/movies/${id}`} className='movie-link'><h2 className='movie-section-title'>{name} ({premiered.slice(0, 4)})</h2></Link>
             <p className='movie-section-genres'>{genres.join(', ')} | {runtime} minutes</p>

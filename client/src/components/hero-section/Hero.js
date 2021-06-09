@@ -1,8 +1,5 @@
 import './Hero.css'
 import { Link } from 'react-router-dom';
-import { useContext, useEffect, useState } from "react";
-import AuthContext from '../../contexts/authContext';
-import CollectionContext from '../../contexts/collectionContext';
 
 const Hero = () => {
 

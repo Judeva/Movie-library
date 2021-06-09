@@ -1,13 +1,12 @@
 import Movie from "../movie/Movie";
 import SearchBar from "../search-bar/Search-bar";
 import CollectionContext from '../../contexts/collectionContext';
-import * as movieService from '../../services/movieService';
 import './SearchPage.css';
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 const SearchPage = () => {
 
-    const { movies, setMovies } = useContext(CollectionContext);
+    const { movies } = useContext(CollectionContext);
 
     return (
         <div className="searchPage-section" >

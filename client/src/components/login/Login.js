@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { auth } from '../../firebase/firebase';
 import { ToastContainer, toast } from "react-toastify";
-// import { validateAuthInput } from "../../services/authService";
 import './Login.css';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,8 +14,6 @@ const Login = ({
     const onLoginSubmitHandler = (e) => {
 
         e.preventDefault();
-
-        // validateAuthInput(username, password);
 
         auth.signInWithEmailAndPassword(username, password)
             .then(userCredentials => {
@@ -62,6 +59,5 @@ const Login = ({
         </div>
     );
 }
-
 
 export default Login;

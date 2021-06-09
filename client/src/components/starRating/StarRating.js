@@ -7,7 +7,7 @@ const StarRating = () => {
     const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
 
-    //TODO: use lifecycle for change state rating
+    //TODO: save in state
 
     return (
         <div className='stars-div'>

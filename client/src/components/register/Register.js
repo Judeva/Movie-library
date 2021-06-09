@@ -14,7 +14,6 @@ const Register = ({
     const [password, setPassword] = useState('');
     const [rePassword, setRePassword] = useState('');
 
-
     const onRegisterSubmitHandler = (e) => {
 
         e.preventDefault();
@@ -29,7 +28,6 @@ const Register = ({
             notes: [],
             ratings: []
         }
-        //  validateAuthInput(username, password);
 
         console.log(newUser);
         // Create user in firebase and auto login.
@@ -51,7 +49,6 @@ const Register = ({
                 toast.error(err.message);
             });
         history.push('/');
-
     }
 
     return (

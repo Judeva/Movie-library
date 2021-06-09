@@ -32,6 +32,4 @@ export const addToFavorites = (username, userData) => {
         .catch(err => console.log(err));
 }
 
-export const removeFromFavorites = () => {
 
-}
